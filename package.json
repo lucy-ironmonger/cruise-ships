@@ -1,0 +1,22 @@
+{
+  "name": "cruise-ships",
+  "version": "1.0.0",
+  "description": "'Lucy and Shona's Cruise Ship Company'",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/samcbride/cruise-ships.git"
+  },
+  "author": "Lucy and Shona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samcbride/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/samcbride/cruise-ships#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
