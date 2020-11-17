@@ -19,6 +19,11 @@ describe('setSail', () => {
         const ship = new Ship ('Spain', 'the Bahamas');
         expect(ship.setSail()).toEqual('The ship has left Spain and will arrive at the Bahamas');
     });
+    it('tests if the ship has left the startingPort', () => {
+        const ship = new Ship ('Spain', 'the Bahamas');
+        ship.setSail()
+        expect(ship.startingPort).toBeFalsy();
+    });
 });
 
 describe('Port constructor', () => {
@@ -27,7 +32,7 @@ describe('Port constructor', () => {
     })
 
     it('has a name property', () => {
-        let port = new Port('Dover');
+        const port = new Port('Dover');
         expect(port.name).toEqual('Dover');
     })
 })
