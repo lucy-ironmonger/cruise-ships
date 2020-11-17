@@ -1,6 +1,9 @@
-const Ship = require('../src/ship');
+const {
+    Ship,
+    Port
+ } = require('../src/ship');
 
-describe('constructor', ()=> {
+describe('Ship constructor', ()=> {
     it('returns an object', () => {
         expect(new Ship).toBeInstanceOf(Object);
     });
@@ -17,4 +20,16 @@ describe('setSail', () => {
         expect(ship.setSail()).toEqual('The ship has left Spain and will arrive at the Bahamas');
     });
 });
+
+describe('Port constructor', () => {
+    it('has a port object', () => {
+        expect(new Port).toBeInstanceOf(Object);
+    })
+
+    it('has a name property', () => {
+        let port = new Port('Dover');
+        expect(port.name).toEqual('Dover');
+    })
+})
+
 
