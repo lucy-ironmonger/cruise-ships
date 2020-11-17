@@ -6,7 +6,7 @@ class Ship {
 }
 
 setSail() {
-    return 'The ship has left from ' + startingPort;
+    return 'The ship has left ' + this.startingPort + ' and will arrive at ' + this.destinationPort;
 }
 }
 
