@@ -1,30 +1,22 @@
 
 class Ship {
-    constructor(startingPort, destinationPort) {
-        this.startingPort = startingPort;
-        this.destinationPort = destinationPort;
-    }
+    constructor(currentPort) {
+        this.currentPort = currentPort;
+        // this.destinationPort = destinationPort;
+    };
 
     setSail() {
-        leftPort() {
-         this.startingPort = null
-        };
-        announceSailing() {
-         return 'The ship has left ' + 
-            this.startingPort + 
-            ' and will arrive at ' + 
-            this.destinationPort
-        };
-        
+        // let announceLeftPort = this.currentPort;
+        this.currentPort = null;
+        // return 'The ship has left ' + 
+        //     announceLeftPort + 
+        //     ' and will arrive at ' + 
+        //     this.destinationPort;
     };
+    dock(newPort) {
+        this.currentPort = newPort;
+    }
 };
 
-class Port {
-    constructor(name) {
-        this.name = name;
-    }
-}
-module.exports = {
-    Ship,
-    Port
-};
+
+module.exports = Ship;
