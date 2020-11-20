@@ -1,7 +1,6 @@
 class Port {
-    constructor(currentPort) {
+    constructor(currentPort) { // fed in an argument which will become current port
         this.currentPort = currentPort;
-        // this.destinationPort = destinationPort;
     };
 };
 
