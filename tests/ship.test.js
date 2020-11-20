@@ -1,7 +1,5 @@
-const {
-    Ship,
-    Port
- } = require('./src/ship');
+const Ship = require('../src/ship');
+const Port = require('../src/port');
 
 describe('Ship constructor', ()=> {
     it('returns an object', () => {
@@ -9,32 +7,35 @@ describe('Ship constructor', ()=> {
     });
 
     it('checks that it has a starting port property', () => {
-        const ship = new Ship('Bahamas')
-        expect(ship.startingPort).toEqual('Bahamas');
+        const port = new Port('Dover');
+        const ship = new Ship(port);
+        expect(ship.currentPort).toEqual(port);
     })
 });
 
 describe('setSail', () => {
-    it('sets the ship sailing', () => {
-        const ship = new Ship ('Spain', 'the Bahamas');
-        expect(ship.setSail()).toEqual('The ship has left Spain and will arrive at the Bahamas');
-    });
-    it('tests if the ship has left the startingPort', () => {
-        const ship = new Ship ('Spain', 'the Bahamas');
-        ship.setSail()
-        expect(ship.startingPort).toBeFalsy();
+    // it('sets the ship sailing', () => {
+    //     const port = new Port ('Spain', 'the Bahamas');
+    //     const ship = new Ship (port);
+    //     expect(ship.setSail()).toEqual('The ship has left Spain and will arrive at the Bahamas');
+    // });
+    it('tests if the ship has left the currentPort', () => {
+        const port = new Port ('Skegness');
+        const ship = new Ship (port);
+        ship.setSail();
+        expect(ship.currentPort).toBeFalsy();
     });
 });
+describe('dock', () => {
+    it('tests if ship can dock at different ports', () => {
+        const doverPort = new Port('Dover');
+        const calaisPort = new Port('Calais');
+        const ship = new Ship (doverPort);
 
-describe('Port constructor', () => {
-    it('has a port object', () => {
-        expect(new Port).toBeInstanceOf(Object);
-    })
+        ship.dock(calaisPort);
 
-    it('has a name property', () => {
-        const port = new Port('Dover');
-        expect(port.name).toEqual('Dover');
-    })
-})
+        expect(ship.currentPort).toEqual(calaisPort);
+    });
+});
 
 
