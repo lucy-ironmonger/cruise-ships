@@ -1,7 +1,7 @@
 const {
     Ship,
     Port
- } = require('../src/ship');
+ } = require('./src/ship');
 
 describe('Ship constructor', ()=> {
     it('returns an object', () => {

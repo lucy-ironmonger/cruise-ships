@@ -1,20 +1,12 @@
 
 class Ship {
-    constructor(startingPort, destinationPort) {
+    constructor(startingPort) {
         this.startingPort = startingPort;
-        this.destinationPort = destinationPort;
+        this.destinationPort = Port;
     }
 
     setSail() {
-        leftPort() {
-         this.startingPort = null
-        };
-        announceSailing() {
-         return 'The ship has left ' + 
-            this.startingPort + 
-            ' and will arrive at ' + 
-            this.destinationPort
-        };
+       
         
     };
 };
