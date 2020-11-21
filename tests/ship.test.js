@@ -19,11 +19,11 @@ describe("Ship constructor", () => {
     expect(ship.currentPort).toEqual(port);
   });
 
-  it('gets added to port on instantiation', () => {
-    const dover = new Port('Dover');
+  it("gets added to port on instantiation", () => {
+    const dover = new Port("Dover");
     const itinerary = new Itinerary([dover]);
     const ship = new Ship(itinerary);
-  
+
     expect(dover.ships).toContain(ship);
   });
 });
@@ -38,6 +38,17 @@ describe("setSail", () => {
     ship.setSail();
 
     expect(ship.currentPort).toBeFalsy(); //changes current port to null
+  });
+
+  it("tests if the ship has been removed from the previous port's current port when it sets sail", () => {
+    const skegness = new Port("Skegness");
+    const holland = new Port("Holland");
+    const berlin = new Port("Berlin");
+    const itinerary = new Itinerary([skegness, holland, berlin]);
+    const ship = new Ship(itinerary);
+    ship.setSail();
+
+    expect(skegness.ships).not.toContain(ship);
   });
 
   it("sets the current port as the previous port once the ship has set sail", () => {
@@ -72,10 +83,19 @@ describe("dock", () => {
     const ship = new Ship(itinerary);
 
     ship.setSail();
-
     ship.dock();
 
     expect(ship.currentPort).toBe(calaisPort);
-    expect(calaisPort.ships).toContain(ship);
-    });
   });
+
+  it("tests if the ship is added to the ship's property of the port when it docks", () => {
+    const doverPort = new Port("Dover");
+    const calaisPort = new Port("Calais");
+    const itinerary = new Itinerary([doverPort, calaisPort]);
+    const ship = new Ship(itinerary);
+
+    ship.setSail();
+    ship.dock();
+    expect(calaisPort.ships).toContain(ship);
+  });
+});
