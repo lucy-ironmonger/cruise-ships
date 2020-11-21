@@ -2,15 +2,19 @@ const Ship = require("../src/ship");
 const Port = require("../src/port");
 const Itinerary = require("../src/itinerary");
 
+let dover;
+let calais;
+let itinerary;
+
 describe("itinerary", () => {
   it("is an itinerary object", () => {
     expect(new Itinerary()).toBeInstanceOf(Object);
   });
 
   it("can have ports", () => {
-    const dover = new Port("Dover");
-    const calais = new Port("Calais");
-    const itinerary = new Itinerary([dover, calais]);
+    dover = new Port("Dover");
+    calais = new Port("Calais");
+    itinerary = new Itinerary([dover, calais]);
 
     expect(itinerary.ports).toEqual([dover, calais]);
 });
