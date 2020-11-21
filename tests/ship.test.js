@@ -106,8 +106,7 @@ describe("dock", () => {
             name: 'Calais',
             ships: [],
         };
-        // dover = new Port("Dover");
-        // calais = new Port("Calais");
+        
         itinerary = new Itinerary([dover, calais]);
         ship = new Ship(itinerary);
 
@@ -116,13 +115,20 @@ describe("dock", () => {
     });
 
     it("tests if ship can dock at different ports", () => {
-        // expect(ship.currentPort).toBe(calais);
-        expect(port.addShip).toHaveBeenCalledWith(ship);
+      expect(port.addShip).toHaveBeenCalledWith(ship);
     });
+  });
 
+  describe('dock part 2', () => {
     it("tests if the ship is added to the ship's property of the port when it docks", () => {
-        dover = new Port("Dover");
-        calais = new Port("Calais");
-        expect(calais.ships).toContain(ship);
+      dover = new Port("Dover");
+      calais = new Port("Calais");
+      itinerary = new Itinerary([dover, calais]);
+      ship = new Ship(itinerary);
+      ship.setSail();
+      ship.dock();
+  
+      expect(calais.ships).toContain(ship);
     });
-});
+  });
+  
