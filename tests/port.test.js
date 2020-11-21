@@ -19,13 +19,14 @@ describe("Port constructor", () => {
 describe("addShip", () => {
   it("add ship to ships property when it docks at port", () => {
     port = {
-        removeShip: jest.fn(), //are these mocks? //
-        addShip: jest.fn(), //are these mocks? //
+      removeShip: jest.fn(), //are these mocks? //
+      addShip: jest.fn(), //are these mocks? //
     };
-    skegness = { //is this a stub? //
-        ...port,
-        name: 'Skegness',
-        ships: [],
+    skegness = {
+      //is this a stub? //
+      ...port,
+      name: "Skegness",
+      ships: [],
     };
 
     port.addShip(ship);
@@ -37,7 +38,7 @@ describe("addShip", () => {
 describe("removeShip", () => {
   it("removes ship from ships property", () => {
     port = new Port("Dover");
-    
+
     port.addShip(ship);
     port.removeShip(ship);
 

@@ -39,12 +39,11 @@ describe("setSail", () => {
   let port;
   beforeEach(() => {
     port = {
-      removeShip: jest.fn(), //are these mocks? //
-      addShip: jest.fn(), //are these mocks? //
+      removeShip: jest.fn(),
+      addShip: jest.fn(),
     };
 
     skegness = {
-      //is this a stub? //
       ...port,
       name: "Skegness",
       ships: [],
@@ -61,14 +60,17 @@ describe("setSail", () => {
       ships: [],
     };
 
-    itinerary = new Itinerary([skegness, holland, berlin]);
+    itinerary = {
+      ports: [skegness, holland, berlin],
+    };
+
     ship = new Ship(itinerary);
     port = jest.fn();
     ship.setSail();
   });
 
   it("tests if the ship has left the currentPort", () => {
-    expect(ship.currentPort).toBeFalsy(); //changes current port to null
+    expect(ship.currentPort).toBeFalsy();
   });
 
   it("tests if the ship has been removed from the previous port's current port when it sets sail", () => {
@@ -109,7 +111,10 @@ describe("dock", () => {
       ships: [],
     };
 
-    itinerary = new Itinerary([dover, calais]);
+    itinerary = {
+      ports: [dover, calais],
+    };
+
     ship = new Ship(itinerary);
 
     ship.setSail();
