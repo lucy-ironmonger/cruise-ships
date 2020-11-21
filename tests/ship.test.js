@@ -7,6 +7,7 @@ describe("Ship constructor", () => {
     const port = new Port("Dover");
     const itinerary = new Itinerary([port]);
     const ship = new Ship(itinerary);
+
     expect(ship).toBeInstanceOf(Object);
   });
 
@@ -16,6 +17,14 @@ describe("Ship constructor", () => {
     const ship = new Ship(itinerary);
 
     expect(ship.currentPort).toEqual(port);
+  });
+
+  it('gets added to port on instantiation', () => {
+    const dover = new Port('Dover');
+    const itinerary = new Itinerary([dover]);
+    const ship = new Ship(itinerary);
+  
+    expect(dover.ships).toContain(ship);
   });
 });
 
@@ -67,5 +76,6 @@ describe("dock", () => {
     ship.dock();
 
     expect(ship.currentPort).toBe(calaisPort);
+    expect(calaisPort.ships).toContain(ship);
     });
   });
