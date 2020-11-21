@@ -3,7 +3,7 @@ const Port = require("../src/port");
 const Itinerary = require("../src/itinerary");
 
 let port;
-let ship;
+const ship = jest.fn();
 
 describe("Port constructor", () => {
   it("has a port object", () => {
@@ -18,19 +18,25 @@ describe("Port constructor", () => {
 
 describe("addShip", () => {
   it("add ship to ships property when it docks at port", () => {
-    port = new Port("Dover");
-    ship = {};
+    port = {
+        removeShip: jest.fn(), //are these mocks? //
+        addShip: jest.fn(), //are these mocks? //
+    };
+    skegness = { //is this a stub? //
+        ...port,
+        name: 'Skegness',
+        ships: [],
+    };
 
     port.addShip(ship);
 
-    expect(port.ships).toContain(ship);
+    expect(port.addShip).toHaveBeenCalledWith(ship);
   });
 });
 
 describe("removeShip", () => {
   it("removes ship from ships property", () => {
     port = new Port("Dover");
-    ship = {};
     
     port.addShip(ship);
     port.removeShip(ship);
