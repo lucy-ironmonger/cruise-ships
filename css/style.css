@@ -9,9 +9,10 @@ body {
 }
 #viewport {
     width: 800px;
-    height: 500px;
+    height: 300px;
     position: relative;
     overflow-x: auto;
+    overflow-y: hidden;
     background-image: url("../images/water0.png");
 }
 #ports {
@@ -36,27 +37,52 @@ body {
     align-items: center;
     height: 100px;
 }
+
+#top {
+    width: 800px;
+    height: 200px;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: black;
+}
+
+
 #sailbutton {
-    position: sticky;
+    display: flex;
     background-color: navy;
+    height: 42px;
+    font-size: 20px;
     transition: all .5s ease-in-out;
     font-family: 'Seaweed Script', cursive;
-    font-size: 18px;
     color: whitesmoke;
     padding: 0.5em;
     border: 1px solid whitesmoke;
     border-radius: 3px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    font-family: 'Seaweed Script', cursive;
+    text-align: center;
+    
 }
 #sailbutton:active {
     top: 5px;
 }
 #message {
-    padding: 16px;
-    font-family: 'Press Start 2P', cursive;
-    position: absolute;
+    border-bottom: solid 4px black;
     width: 100%;
-    top: 0;
-    background-color: white;
+    height: 42px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    position: sticky;
+    bottom: 400px;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Seaweed Script', cursive;
     text-align: center;
-    /* background-image: url("../images/pigs.png"); */
+    font-size: 20px;
+
 }
