@@ -40,7 +40,7 @@ body {
 
 #top {
     width: 800px;
-    height: 200px;
+    height: 100px;
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
