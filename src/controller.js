@@ -3,52 +3,81 @@
         constructor(ship) {
             this.initialiseSea();
             this.ship = ship;
+            // console.log(ship.currentPort);
 
             document.querySelector('#sailbutton').addEventListener('click', () => {
                 this.setSail();
             });
         }
+        // setSail() {
+        //     const currentPortIndex = this.ship.itinerary.ports.indexOf(this.ship.currentPort);
+        //     const nextPortIndex = currentPortIndex + 1;
+        //     const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+
+        //     if (!nextPortElement) {
+        //         return alert('End of the line!');
+        //     }
+        //     this.renderMessage(`Now departing ${this.ship.currentPort.name}`);
+        //     const shipElement = document.querySelector('#ship');
+
+        //     const portPosition = nextPortElement.offsetLeft;
+
+        //     let shipPosition = shipElement.offsetLeft;
+
+        //     ship.setSail();
+        //     const sailInterval = setInterval(() => {
+        //         if (shipPosition === portPosition - 32) {
+        //             clearInterval(sailInterval);
+        //         }
+        //         shipElement.style.left = `${shipPosition + 1}px`;
+        //         shipPosition += 1;
+        //     }, 10);
+
+        //     ship.dock();
+        //     setTimeout(() => {
+        //         this.renderMessage(`Now arriving at ${this.ship.itinerary.ports[nextPortIndex].name}`);
+        //     }, 2000);
+        // }
         setSail() {
-            const currentPortIndex = this.ship.itinerary.ports.indexOf(this.ship.currentPort);
+            const ship = this.ship;
+
+            const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
             const nextPortIndex = currentPortIndex + 1;
             const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
 
             if (!nextPortElement) {
                 return alert('End of the line!');
             }
-            this.renderMessage(`Now departing ${this.ship.currentPort.name}`);
+            console.log(ship.currentPort);
+            this.renderMessage(`Now departing ${ship.currentPort.name}`);
             const shipElement = document.querySelector('#ship');
-
-            const portPosition = nextPortElement.offsetLeft;
-            
-            let shipPosition = shipElement.offsetLeft;
-
-            ship.setSail();
             const sailInterval = setInterval(() => {
-                if (shipPosition === portPosition - 32) {
+                const shipLeft = parseInt(shipElement.style.left, 10);
+                if (shipLeft === (nextPortElement.offsetLeft - 32)) {
+                    ship.setSail();
+                    ship.dock();
                     clearInterval(sailInterval);
                 }
-                shipElement.style.left = `${shipPosition + 1}px`;
-                shipPosition += 1;
-            }, 10);
 
-            ship.dock();
+                shipElement.style.left = `${shipLeft + 1}px`;
+            }, 20);
             setTimeout(() => {
-                this.renderMessage(`Now arriving at ${this.ship.itinerary.ports[nextPortIndex].name}`);
-            }, 2000);
-        }
-
-        renderMessage(message) {
-            const messageElement = document.createElement('div');
-            messageElement.id = 'message';
-            messageElement.innerHTML = message;
-
-            const viewport = document.querySelector('#viewport');
-            viewport.appendChild(messageElement);
-            setTimeout(() => {
-                viewport.removeChild(messageElement);
+            this.renderMessage(`Now arriving at ${this.ship.itinerary.ports[nextPortIndex].name}`);
             }, 2000);
         };
+    
+
+    renderMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.id = 'message';
+        messageElement.innerHTML = message;
+
+        const viewport = document.querySelector('#viewport');
+        viewport.appendChild(messageElement);
+        setTimeout(() => {
+            viewport.removeChild(messageElement);
+        }, 2000);
+    };
 
 
 

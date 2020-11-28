@@ -1,7 +1,7 @@
 (function () {class Port {
-  constructor(currentPort) {
-    this.currentPort = currentPort;
+  constructor(name) {
     this.ships = [];
+    this.name = name;
   }
   addShip(ship) {
     this.ships.push(ship);
