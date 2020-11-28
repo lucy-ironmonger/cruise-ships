@@ -8,8 +8,8 @@ body {
     align-items: center;
 }
 #viewport {
-    width: 640px;
-    height: 256px;
+    width: 800px;
+    height: 500px;
     position: relative;
     overflow-x: auto;
     background-image: url("../images/water0.png");
@@ -57,7 +57,7 @@ body {
     width: 100%;
     top: 0;
     border-top: 3px solid black;
-    /* background-color: white; */
+    background-color: white;
     text-align: center;
-    background-image: url("../images/pigs.png");
+    /* background-image: url("../images/pigs.png"); */
 }
