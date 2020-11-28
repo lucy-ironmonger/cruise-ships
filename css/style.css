@@ -37,7 +37,7 @@ body {
     height: 100px;
 }
 #sailbutton {
-    position: relative;
+    position: sticky;
     background-color: navy;
     transition: all .5s ease-in-out;
     font-family: 'Seaweed Script', cursive;
@@ -56,7 +56,6 @@ body {
     position: absolute;
     width: 100%;
     top: 0;
-    border-top: 3px solid black;
     background-color: white;
     text-align: center;
     /* background-image: url("../images/pigs.png"); */

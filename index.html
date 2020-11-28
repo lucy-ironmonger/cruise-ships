@@ -27,7 +27,10 @@
         const dover = new Port('Dover');
         const calais = new Port('Calais');
         const paris = new Port('Paris');
-        const itinerary = new Itinerary([dover, calais, paris]);
+        const timbuktu = new Port('Timbuktu');
+        const lisbon = new Port('Lisbon');
+        const wellington = new Port('Wellington');
+        const itinerary = new Itinerary([dover, calais, paris, timbuktu, lisbon, wellington]);
         const ship = new Ship(itinerary);
         const controller = new Controller(ship);
         controller.renderPorts(itinerary.ports);

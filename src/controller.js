@@ -70,7 +70,7 @@
       );
 
       if (!nextPortElement) {
-        return alert("End of the line!");
+        return this.renderMessage("End of the line!");
       }
 
       this.renderMessage(`Now departing ${ship.currentPort.name}`);
