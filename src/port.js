@@ -1,4 +1,4 @@
-class Port {
+(function () {class Port {
   constructor(currentPort) {
     this.currentPort = currentPort;
     this.ships = [];
@@ -11,4 +11,9 @@ class Port {
   }
 }
 
-module.exports = Port;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Port;
+} else {
+  window.Port = Port;
+}
+}());
