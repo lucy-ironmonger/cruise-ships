@@ -16,7 +16,7 @@ body {
 }
 #ports {
     width: 0px;
-    margin-top: 96px;
+    margin-top: 146px;
     display: flex;
     justify-content: space-around;
 }
@@ -30,4 +30,34 @@ body {
     height: 64px;
     background-image: url("../images/ship.png");
     position: absolute;
+}
+.container {display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+#sailbutton {
+    position: relative;
+    background-color: navy;
+    transition: all .5s ease-in-out;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 18px;
+    color: whitesmoke;
+    padding: 0.5em;
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+}
+#sailbutton:active {
+    top: 5px;
+}
+#message {
+    padding: 16px;
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    border-top: 3px solid black;
+    /* background-color: white; */
+    text-align: center;
+    background-image: url("../images/pigs.png");
 }

@@ -7,26 +7,30 @@
     <title>Cruise Ships</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="viewport">
         <div id="ports"></div>
         <div id="ship"></div>   
+        <div class="container">
+            <button type="button" id="sailbutton">Set Sail</button>
+        </div>
     </div>
     <script src="src/controller.js"></script>
     <script src="src/port.js"></script>
     <script src="src/itinerary.js"></script>
     <script src="src/ship.js"></script>
     <script>
-        const controller = new Controller();
         const dover = new Port('Dover');
         const calais = new Port('Calais');
         const paris = new Port('Paris');
         const itinerary = new Itinerary([dover, calais, paris]);
         const ship = new Ship(itinerary);
+        const controller = new Controller(ship);
         controller.renderPorts(itinerary.ports);
-        controller.renderShip(ship);
+        controller.renderShip();
     </script>
 
 </body>
