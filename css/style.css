@@ -7,6 +7,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#ship {
+     width: 128px;
+    height: 64px;
+    background-image: url("../images/ship.png");
+    position: absolute;
+}
+
 #viewport {
     width: 800px;
     height: 300px;
@@ -15,27 +23,18 @@ body {
     overflow-y: hidden;
     background-image: url("../images/water0.png");
 }
+
 #ports {
     width: 0px;
     margin-top: 146px;
     display: flex;
     justify-content: space-around;
 }
+
 #ports > .port {
     width: 64px;
     height: 32px;
     background-image: url("../images/port.png");
-}
-#ship {
-    width: 128px;
-    height: 64px;
-    background-image: url("../images/ship.png");
-    position: absolute;
-}
-.container {display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
 }
 
 #top {
@@ -47,8 +46,37 @@ body {
     background-color: black;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
 
-.sailbutton {
+
+
+#sailbutton {
+    display: flex;
+    background-color: navy;
+    height: 42px;
+    font-size: 40px;
+    transition: all .5s ease-in-out;
+    font-family: 'Seaweed Script', cursive;
+    color: whitesmoke;
+    padding: 1em;
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    font-family: 'Seaweed Script', cursive;
+    text-align: center;
+    
+}
+
+
+#submitPortBtn {
     display: flex;
     background-color: navy;
     height: 42px;
@@ -68,7 +96,7 @@ body {
     
 }
 
-.sailbutton:active {
+#sailbutton:active {
     top: 5px;
 }
 
@@ -86,9 +114,6 @@ body {
     color: whitesmoke;
     font-size: 40px;
     padding: 0 0 0 0;
-    /* align-items: center;
-    align-content: center;
-    align-self: center; */
 }
 
 input {
@@ -116,3 +141,4 @@ input {
     font-size: 20px;
 
 }
+

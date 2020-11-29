@@ -13,59 +13,66 @@
   </head>
 
   <body>
-    <div class="main">
+   <div class="main">
 
         <div class="central">
         
               <div class="portForm">
-                <form>
+                <form action="#">
               <label for="enterPort">Enter ports you'd like to go to:</label><br>
               <input type="text" id="enterPort" name="enterPort" />
-        
 
-            <div class="portForm">
-              <input type="submit" value="Submit Port" class="sailbutton" />
+              <div class="portForm">
+              <input type="submit" value="Submit Port" id="submitPortBtn" />
             </form>
-        </div>
-
-        </div>
           </div>
+        </div><!--END PORTFORM -->
+
+        </div><!--END CENTRAL-->
+          
               
       <div id="top">
         <div class="container">
-          <button type="button" class="sailbutton">Set Sail</button>
-        </div>
-        
-      </div>
+          <button type="button" id="sailbutton">Set Sail</button>
+      </div><!--END CONTAINER-->
+    </div><!--END TOP-->
+
       <div id="viewport">
         <div id="ports"></div>
+        <!--PORTS ADDED IN HERE BY RENDERPORTS-->
         <div id="ship"></div>
         <div id="message"></div>
-      </div>
-    </div>
+      </div><!--END VIEWPORT-->
+
+    </div><!-- END MAIN -->
+
     <script src="src/controller.js"></script>
     <script src="src/port.js"></script>
     <script src="src/itinerary.js"></script>
     <script src="src/ship.js"></script>
     <script>
-      const dover = new Port("Dover");
-      const calais = new Port("Calais");
-      const paris = new Port("Paris");
-      const timbuktu = new Port("Timbuktu");
-      const lisbon = new Port("Lisbon");
-      const wellington = new Port("Wellington");
-      const itinerary = new Itinerary([
-        dover,
-        calais,
-        paris,
-        timbuktu,
-        lisbon,
-        wellington,
-      ]);
+
+      const itinerary = new Itinerary([]);
       const ship = new Ship(itinerary);
       const controller = new Controller(ship);
-      controller.renderPorts(itinerary.ports);
-      controller.renderShip();
+  
+
+    function submitPortsFunction() {
+    event.preventDefault();
+    const enterPortInput = document.getElementById('enterPort').value;
+    if (!enterPortInput) {
+        alert('Please enter a port name')
+     } else {
+        const port = new Port(enterPortInput);
+        controller.ship.itinerary.ports.push(port);
+        controller.ship.dock();
+        controller.renderPorts();
+        document.querySelector('#enterPort').value = "";       
+  }};
+
+      document.getElementById('submitPortBtn').addEventListener('click', submitPortsFunction);
+
     </script>
+    
   </body>
 </html>

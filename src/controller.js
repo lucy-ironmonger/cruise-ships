@@ -32,10 +32,19 @@
       shipElement.style.left = `${portElement.offsetLeft - 32}px`;
     }
 
-    renderPorts(ports) {
+    renderPorts() {
       let portsElement = document.querySelector("#ports");
       portsElement.style.width = "0px";
-      ports.forEach((port, index) => {
+
+      if (portsElement.hasChildNodes()){ 
+        while (portsElement.firstChild) {
+          portsElement.removeChild(portsElement.firstChild);
+        }
+     }
+        if(this.ship.itinerary.ports.length > 0){
+
+
+      this.ship.itinerary.ports.forEach((port, index) => {
         const newPortElement = document.createElement("div");
         newPortElement.className = "port";
         newPortElement.dataset.portName = port.name;
@@ -45,7 +54,7 @@
         const portsElementWidth = parseInt(portsElement.style.width, 10);
         portsElement.style.width = `${portsElementWidth + 256}px`;
       });
-    }
+    }}
 
     renderMessage(message) {
       const messageElement = document.createElement("div");
