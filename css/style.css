@@ -48,7 +48,7 @@ body {
 }
 
 
-#sailbutton {
+.sailbutton {
     display: flex;
     background-color: navy;
     height: 42px;
@@ -67,9 +67,39 @@ body {
     text-align: center;
     
 }
-#sailbutton:active {
+
+.sailbutton:active {
     top: 5px;
 }
+
+.central {
+    display: flex;
+    justify-content: center;
+}
+
+.portForm {
+    display: flex;
+    margin: auto;
+    display:inline-block;
+    justify-content: space-evenly;
+    font-family: 'Seaweed Script', cursive;
+    color: whitesmoke;
+    font-size: 40px;
+    padding: 0 0 0 0;
+    /* align-items: center;
+    align-content: center;
+    align-self: center; */
+}
+
+input {
+    font-family: 'Seaweed Script', cursive;
+    font-size: 20px;
+    color: navy;
+    border-radius: 3px;
+    padding: 0.45em 0em 0.15em 0em;
+    border: 1px solid whitesmoke;
+}
+
 #message {
     border-bottom: solid 4px black;
     width: 100%;
