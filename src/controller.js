@@ -4,7 +4,7 @@
       this.initialiseSea();
       this.ship = ship;
 
-      document.querySelector("#sailbutton").addEventListener("click", () => {
+      document.querySelector("#setSailButton").addEventListener("click", () => {
         this.setSail();
       });
     }
@@ -42,7 +42,6 @@
         }
      }
         if(this.ship.itinerary.ports.length > 0){
-
 
       this.ship.itinerary.ports.forEach((port, index) => {
         const newPortElement = document.createElement("div");

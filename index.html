@@ -13,38 +13,42 @@
   </head>
 
   <body>
-   <div class="main">
+<!-- START OF MAIN WRAPPER -->
+    <div class="main_wrapper">
 
-        <div class="central">
-        
-              <div class="portForm">
-                <form action="#">
+<!--START OF PORT FORM SECTION -->
+      <div class="portFormSection">
+          <div class="portForm">
+              <form action="#">
               <label for="enterPort">Enter ports you'd like to go to:</label><br>
               <input type="text" id="enterPort" name="enterPort" />
-
               <div class="portForm">
-              <input type="submit" value="Submit Port" id="submitPortBtn" />
-            </form>
+              <input type="submit" value="Submit Port" id="submitPortButton" />
+              </form>
+              </div>
           </div>
-        </div><!--END PORTFORM -->
+      </div>
+<!--END OF PORT FORM SECTION-->
 
-        </div><!--END CENTRAL-->
-          
-              
-      <div id="top">
-        <div class="container">
-          <button type="button" id="sailbutton">Set Sail</button>
-      </div><!--END CONTAINER-->
-    </div><!--END TOP-->
+<!--START OF SET SAIL BUTTON SECTION-->
+      <div id="setSailSection">
+        <div class="setSailContainer">
+          <button type="button" id="setSailButton">Set Sail</button>
+        </div>
+      </div>
+<!--END OF SET SAIL BUTTON SECTION -->
 
+<!--START OF VIEWPORT FOR CRUISE SHIP SECTION -->
       <div id="viewport">
         <div id="ports"></div>
         <!--PORTS ADDED IN HERE BY RENDERPORTS-->
         <div id="ship"></div>
         <div id="message"></div>
-      </div><!--END VIEWPORT-->
+      </div>
+<!--END OF VIEWPORT FOR CRUISE SHIP SECTION -->
 
-    </div><!-- END MAIN -->
+    </div>
+<!-- END OF MAIN WRAPPER -->
 
     <script src="src/controller.js"></script>
     <script src="src/port.js"></script>
@@ -55,7 +59,6 @@
       const itinerary = new Itinerary([]);
       const ship = new Ship(itinerary);
       const controller = new Controller(ship);
-  
 
     function submitPortsFunction() {
     event.preventDefault();
@@ -68,11 +71,9 @@
         controller.ship.dock();
         controller.renderPorts();
         document.querySelector('#enterPort').value = "";       
-  }};
-
-      document.getElementById('submitPortBtn').addEventListener('click', submitPortsFunction);
+    }};
+      document.getElementById('submitPortButton').addEventListener('click', submitPortsFunction);
 
     </script>
-    
   </body>
 </html>
