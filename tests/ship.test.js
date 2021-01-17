@@ -95,12 +95,11 @@ describe("dock", () => {
   it("tests if ship can dock at different ports", () => {
     let port;
     port = {
-      removeShip: jest.fn(), //are these mocks? //
-      addShip: jest.fn(), //are these mocks? //
+      removeShip: jest.fn(), 
+      addShip: jest.fn(), 
     };
 
     dover = {
-      //is this a stub? //
       ...port,
       name: "Dover",
       ships: [],
