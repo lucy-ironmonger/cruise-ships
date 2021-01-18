@@ -26,9 +26,7 @@ The entire project was pair-programmed between myself and [Shona McBride](https:
 
 ### Effectively breaking down a user story into a domain model
 
-A user story portrays parts of the functionality an application should have, from the perspective of the person using it.
-
-For example:
+A user story portrays parts of the functionality an application should have, from the perspective of the person using it. For example:
 
 > As a cruise ship captain, <br>
 > So I can get passengers aboard a ship <br>
