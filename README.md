@@ -57,7 +57,7 @@ Dependency inversion - the premise that an object (for example, our **ship**) ca
 
 In our code, the **controller** was receiving the **ship**, the ship was receiving the **itinerary** (which begins life as an empty array), and the itinerary is receiving the **ports**. All of these are constructors in our src folder. <br>
  
-### Used mocks to emulate dependencies in the test, and spies to track call history of other functions
+### Using mocks to emulate dependencies in the test, and spies to track call history of other functions
 
 As OOP inherently is interlinked with other objects, using mocks was important to help control the environment and isolate the tests so as not to be affected by other parts of the code. By using jest.fn() we were able to utilise mocks and spies, and use certain methods to test behaviour; for example our setSail method under ‘gets added to port on instantiation’. <br> 
 
