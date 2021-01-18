@@ -1,6 +1,6 @@
 # All Aboard!
 
-Thanks for dropping by dock. [Hop aboard](https://ironmongrrrl.github.io/cruise-ships/), list the ports you’d like to cruise to and away we’ll go! 
+Thanks for dropping by dock. [Hop aboard](https://ironmongrrrl.github.io/cruise-ships), list the ports you’d like to cruise to and away we’ll go! 
 
 ## Overview of the Project
 
@@ -17,9 +17,8 @@ The entire project was pair-programmed between myself and [Shona McBride](https:
 - Single Responsibility Principle
 - Dependency inversion
 - ‘This’
-- TDD / Jest
-- Mocks
-- Spies
+- TDD with Jest
+- Mocks, Spies and Stubs
 
 ***
 
