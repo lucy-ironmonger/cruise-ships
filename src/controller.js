@@ -78,7 +78,7 @@
       );
 
       if (!nextPortElement) {
-        return this.renderMessage("End of the line!");
+        return this.renderMessage("End of the line! Everybody into the sea!");
       }
 
       this.renderMessage(`Now departing ${ship.currentPort.name}`);

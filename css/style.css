@@ -11,7 +11,7 @@ body {
 
 /* SHIPS AND PORTS */
 #ship {
-     width: 128px;
+    width: 128px;
     height: 64px;
     background-image: url("../images/ship.png");
     position: absolute;
@@ -50,11 +50,11 @@ body {
 
 #enterPort {
     font-family: 'Seaweed Script', cursive;
-    font-size: 20px;
+    font-size: 30px;
     width: 310px;
     color: navy;
     border-radius: 3px;
-    padding: 0.45em 0em 0.15em 0em;
+    padding: 0.45em 0em 0.1em 0em;
     border: 1px solid whitesmoke;
 }
 
@@ -77,8 +77,8 @@ body {
 #submitPortButton {
     display: flex;
     background-color: navy;
-    height: 42px;
-    font-size: 20px;
+    height: 62px;
+    font-size: 30px;
     transition: all .5s ease-in-out;
     font-family: 'Seaweed Script', cursive;
     color: whitesmoke;
