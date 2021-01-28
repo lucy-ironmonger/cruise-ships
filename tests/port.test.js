@@ -3,18 +3,18 @@ const Port = require("../src/port");
 const Itinerary = require("../src/itinerary");
 
 let port;
-const ship = jest.fn();
+let ship = jest.fn();
 
 describe("Port constructor", () => {
+  port = new Port('Dover');
   it("has a port object", () => {
     expect(new Port()).toBeInstanceOf(Object);
   });
 
-  it("has a currentPort property", () => {
-    port = new Port("Dover");
-    expect(port.currentPort).toEqual("Dover");
+  it('has a name property', () => {
+    expect(port.name).toBe('Dover');
   });
-});
+  });
 
 describe("addShip", () => {
   it("add ship to ships property when it docks at port", () => {
